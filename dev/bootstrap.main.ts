@@ -78,9 +78,9 @@ function startDevToolsInstall() {
     installer(devToolsInstaller.REACT_PERF)
       .then((name: string) => console.info(`extension installed: ${name}`))
       .catch((err: Error) => console.error(`error installing extension: ${err}`));
-    installer(devToolsInstaller.REDUX_DEVTOOLS)
-      .then((name: string) => console.info(`extension installed: ${name}`))
-      .catch((err: Error) => console.error(`error installing extension: ${err}`));
+    // installer(devToolsInstaller.REDUX_DEVTOOLS)
+    //   .then((name: string) => console.info(`extension installed: ${name}`))
+    //   .catch((err: Error) => console.error(`error installing extension: ${err}`));
     const devtronInstaller = require('devtron');
     devtronInstaller.install();
   }
