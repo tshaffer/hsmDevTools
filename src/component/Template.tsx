@@ -71,25 +71,25 @@ const useStyles = makeStyles((theme) => ({
     width: '25ch',
   },
   divContainers: {
-    resize: 'both',
-    overflow: 'scroll'
+    // resize: 'both',
+    // overflow: 'scroll'
+    display: 'flex',
+    border: '1px solid #000',
+    height: '600px',
+    width: '100%'
   },
   leftDiv: {
-    width: '40%',
+    flexGrow: 1,
+    border: '1px solid red',
+    resize: 'horizontal',
+    overflow: 'auto',
     height: '600px',
-    float: 'left',
-    background: 'green',
-    resize: 'both',
-    overflow: 'scroll',
-    border: '1px solid black'
   },
   rightDiv: {
-    marginLeft: '50%',
+    flexGrow: 5,
+    border: '1px solid red',
     height: '600px',
     background: 'blue',
-    resize: 'both',
-    overflow: 'scroll',
-    border: '1px solid black'
   }
 }));
 
