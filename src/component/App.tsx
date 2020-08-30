@@ -1,5 +1,5 @@
 import * as React from 'react';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 // -----------------------------------------------------------------------
@@ -15,12 +15,17 @@ import { connect } from 'react-redux';
 // -----------------------------------------------------------------------
 
 const AppComponent = () => {
+
+  useEffect(() => {
+    console.log('useEffect invoked');
+  });
+
   return (
     <div>
       Pizza
     </div>
   );
-}
+};
 
 // -----------------------------------------------------------------------
 // Container
