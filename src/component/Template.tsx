@@ -70,9 +70,8 @@ const useStyles = makeStyles((theme) => ({
   textField: {
     width: '25ch',
   },
+  // https://codepen.io/anon/pen/YjJBZm
   divContainers: {
-    // resize: 'both',
-    // overflow: 'scroll'
     display: 'flex',
     border: '1px solid #000',
     height: '600px',
@@ -80,13 +79,17 @@ const useStyles = makeStyles((theme) => ({
   },
   leftDiv: {
     flexGrow: 1,
-    border: '1px solid red',
     resize: 'horizontal',
+
     overflow: 'auto',
+    border: '1px solid red',
     height: '600px',
+    background: 'green',
   },
   rightDiv: {
-    flexGrow: 5,
+    flexGrow: 2,
+
+    overflow: 'auto',
     border: '1px solid red',
     height: '600px',
     background: 'blue',
