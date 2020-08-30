@@ -56,6 +56,8 @@ const containerStyle = style(csstips.fillParent, csstips.vertical);
 
 import { makeStyles } from '@material-ui/core/styles';
 
+// google search phrase: drag side by side divs
+// google search phrase: resizable side by side divs
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
