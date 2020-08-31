@@ -66,6 +66,27 @@ const AppComponent = (props: AppProps | any) => {
     }
   });
 
+  const selectEvent = (hsmEvent: HsmEvent) => {
+    console.log('selectEvent invoked');
+    console.log(hsmEvent);
+  };
+
+  const getEvents = () => {
+    const events: any[] = props.events.map((event: HsmEvent, index: number) => {
+      const eventLabel = event.event.EventType.toString();
+      return (
+        <ListItem
+          key={index}
+          button={true}
+          onClick={() => selectEvent(event)}
+        >
+          <ListItemText primary={eventLabel} />
+        </ListItem>
+      );
+    });
+    return events;
+  };
+
   console.log(props.events.length);
 
   // https://stackoverflow.com/questions/46044589/dynamically-resize-columns-in-css-grid-layout-with-mouse
@@ -73,12 +94,7 @@ const AppComponent = (props: AppProps | any) => {
   return (
     <div>
       <List>
-        <ListItem button={true}>
-          <ListItemText primary='Pizza' />
-        </ListItem>
-        <ListItem button={true}>
-          <ListItemText primary='Burger' />
-        </ListItem>
+        {getEvents()}
       </List>
     </div>
   );
@@ -90,13 +106,13 @@ const AppComponent = (props: AppProps | any) => {
 
 const mapStateToProps = (state: any): any => {
   return {
-        events: getHsmEvents(state),
+    events: getHsmEvents(state),
   };
 };
 
 const mapDispatchToProps = (dispatch: any) => {
   return bindActionCreators({
-        onLoadLogs: loadLog,
+    onLoadLogs: loadLog,
   }, dispatch);
 };
 
