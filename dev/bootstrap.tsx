@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { rootReducer } from '../src/model';
+import { rootReducer } from '../src/models';
 import { App } from '../src/index';
 import './bootstrap.css';
 import 'normalize.css/normalize.css';

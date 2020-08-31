@@ -3,13 +3,14 @@
 import {
   combineReducers
 } from 'redux';
-import { pooReducer } from './poo';
+import { eventsReducer } from './events';
+import { HsmDevToolsModelState } from '../type';
 
 // -----------------------------------------------------------------------
 // Reducers
 // -----------------------------------------------------------------------
-export const rootReducer = combineReducers<any>({
-  poo: pooReducer,
+export const rootReducer = combineReducers<HsmDevToolsModelState>({
+  events: eventsReducer,
 });
 
 // -----------------------------------------------------------------------

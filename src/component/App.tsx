@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { loadLog } from '../controllers';
+import { bindActionCreators } from 'redux';
 
 // -----------------------------------------------------------------------
 // Types
@@ -14,10 +16,15 @@ import { connect } from 'react-redux';
 // Component
 // -----------------------------------------------------------------------
 
-const AppComponent = () => {
+interface AppProps {
+  onLoadLogs: () => any;
+}
+
+const AppComponent = (props: AppProps | any) => {
 
   useEffect(() => {
     console.log('useEffect invoked');
+    props.onLoadLogs();
   });
 
   return (
@@ -37,4 +44,10 @@ const mapStateToProps = (state: any): any => {
   };
 };
 
-export const App = connect(mapStateToProps)(AppComponent);
+const mapDispatchToProps = (dispatch: any) => {
+  return bindActionCreators({
+    onLoadLogs: loadLog,
+  }, dispatch);
+};
+
+export const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent);
