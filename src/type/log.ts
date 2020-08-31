@@ -1,11 +1,5 @@
 /** @module Types:log */
 
-/** @internal */
-/** @private */
-export interface HsmDevToolsEventsState {
-  events: HsmEvent[];
-}
-
 export interface HsmEvent {
   time: number;
   event: HsmEventType;

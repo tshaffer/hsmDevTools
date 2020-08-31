@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { loadLog } from '../controllers';
 import { bindActionCreators } from 'redux';
+import { getHsmEvents } from '../selectors/events';
+import { HsmEvent } from '../type';
 
 // -----------------------------------------------------------------------
 // Types
@@ -17,15 +19,22 @@ import { bindActionCreators } from 'redux';
 // -----------------------------------------------------------------------
 
 interface AppProps {
+  events: HsmEvent[];
   onLoadLogs: () => any;
 }
 
 const AppComponent = (props: AppProps | any) => {
 
+  const [_logLoaded, setLogLoaded] = useState(false);
+
   useEffect(() => {
-    console.log('useEffect invoked');
-    props.onLoadLogs();
+    if (!_logLoaded) {
+      props.onLoadLogs();
+      setLogLoaded(true);
+    }
   });
+
+  console.log(props.events.length);
 
   return (
     <div>
@@ -40,7 +49,7 @@ const AppComponent = (props: AppProps | any) => {
 
 const mapStateToProps = (state: any): any => {
   return {
-    color: 69
+    events: getHsmEvents(state),
   };
 };
 
