@@ -87,8 +87,6 @@ const AppComponent = (props: AppProps | any) => {
     return events;
   };
 
-  console.log(props.events.length);
-
   // https://stackoverflow.com/questions/46044589/dynamically-resize-columns-in-css-grid-layout-with-mouse
   // https://v4-9-14.material-ui.com/api/list/
   return (
